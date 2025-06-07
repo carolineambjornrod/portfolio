@@ -19,7 +19,6 @@ html, body{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 24px;
 }
 .line{
     display: inline-block;
@@ -69,19 +68,95 @@ p{
     width: 100%;
     height: 50%;
     padding-left: 40%;
+    padding-right: 30%;
+    /** hide scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer and Edge */
 }
 .project_preview {
-    width: 10vw;
-    min-width: 10vw;
-    height: 100%;
-    background: red;
+    width: 15vw;
+    min-width: 15vw;
+    height: 0%;
     border-radius: 8px;
     transition-duration: .5s;
     transition-timing-function: ease-in-out;
+    animation: projectPreview 1s ease-in-out forwards;
+    transform-origin: top;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.project_preview .project_info_container{
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    bottom: 0px;
+    padding: 24px;
+    transform: translateY(25px);
+    color: white;
+    mix-blend-mode: difference;
+    transition-duration: .5s;
+}
+.project_preview .project_info_container h2{
+    font-size: 22px;
+    font-weight: bold;
+}
+.project_preview .img_container{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.project_preview .img_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
 }
 .project_preview:hover{
     width: 30vw;
     min-width: 30vw;
+}
+.project_preview:hover .project_info_container{
+    transform: translateY(0px);
+    opacity: 1;
+}
+/** add delay to each project preview */
+.project_preview:nth-child(1) {
+    animation-delay: 0s;
+}
+.project_preview:nth-child(2) {
+    animation-delay: 0.1s;
+}
+.project_preview:nth-child(3) {
+    animation-delay: 0.2s;
+}
+.project_preview:nth-child(4) {
+    animation-delay: 0.3s;
+}
+.project_preview:nth-child(5) {
+    animation-delay: 0.4s;
+}
+.project_preview:nth-child(6) {
+    animation-delay: 0.5s;
+}
+.project_preview:nth-child(7) {
+    animation-delay: 0.6s;
+}
+.project_preview:nth-child(8) {
+    animation-delay: 0.7s;
+}
+.project_preview:nth-child(9) {
+    animation-delay: 0.8s;
+}
+@keyframes projectPreview{
+    0% {
+        height: 0%;
+
+    }
+    100% {
+        height: 100%;
+    }
 }
 @media screen and (max-width: 768px) {
 }

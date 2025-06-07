@@ -1,64 +1,64 @@
 const projects = [
     {
-        name: "UD2024",
+        name: "kanoncaro",
         description: "This is the first project.",
-        mainImage: "https://example.com/image1.jpg",
+        mainImage: "image.jpg",
         imgs: [
             'https://picsum.photos/id/237/300/200',
         ]
     },
     {
-        name: "UD2023",
+        name: "kanoncaro",
         description: "This is the second project.",
-        mainImage: "https://example.com/image2.jpg",
+        mainImage: "image.jpg",
         imgs: [
             'https://picsum.photos/id/241/300/200',
         ]
     },
     {
-        name: "UD2022",
+        name: "kanoncaro",
         description: "This is the third project.",
-        mainImage: "https://example.com/image3.jpg",
+        mainImage: "image.jpg",
         imgs: [
-            'https://picsum.photos/id/245/300/200',
+            'https://picsum.photos/id/241/300/200',
         ]
     },
     {
-        name: "UD2021",
+        name: "kanoncaro",
         description: "This is the fourth project.",
-        mainImage: "https://example.com/image4.jpg",
+        mainImage: "image.jpg",
         imgs: [
             'https://picsum.photos/id/249/300/200',
         ]
     },
     {
-        name: "UD2024",
+        name: "kanoncaro",
         description: "This is the first project.",
-        mainImage: "https://example.com/image1.jpg",
+        mainImage: "image.jpg",
         imgs: [
             'https://picsum.photos/id/237/300/200',
         ]
     },
     {
-        name: "UD2023",
+        name: "kanoncaro",
         description: "This is the second project.",
-        mainImage: "https://example.com/image2.jpg",
+        mainImage: "image.jpg",
         imgs: [
             'https://picsum.photos/id/241/300/200',
         ]
     },
     {
-        name: "UD2022",
+        name: "kanoncaro",
         description: "This is the third project.",
-        mainImage: "https://example.com/image3.jpg",
+        mainImage: "image.jpg",
         imgs: [
-            'https://picsum.photos/id/245/300/200',
+            'https://picsum.photos/id/241/300/200',
         ]
     },
     {
-        name: "UD2021",
+        name: "kanoncaro",
         description: "This is the fourth project.",
-        mainImage: "https://example.com/image4.jpg",
+        mainImage: "image.jpg",
         imgs: [
             'https://picsum.photos/id/249/300/200',
         ]
@@ -86,12 +86,22 @@ function loadProjectPreviews(){
         projectPreview.classList.add("project_preview");
         projectPreview.id = project.name;
         projectPreview.innerHTML = `
-            <h2>${project.name}</h2>
-            <p>${project.description}</p>
-            <img src="${project.mainImage}" alt="${project.name} main image" class="main_image">
+            <div class="project_info_container">
+                <h2>${project.name}</h2>
+            </div>
+            <div class="img_container">
+                <img src="${project.mainImage}" alt="${project.name} main image" class="main_image">
+            </div>
         `;
         document.querySelector('#project_preview_container').appendChild(projectPreview);
     });
 }
 
-// loadProjectPreviews();
+loadProjectPreviews();
+
+// convert vertical scroll to horizontal scroll
+const projectPreviewContainer = document.querySelector('#project_preview_container');
+projectPreviewContainer.addEventListener('wheel', (event) => {
+    event.preventDefault();
+    projectPreviewContainer.scrollLeft += event.deltaY;
+}, { passive: false });
