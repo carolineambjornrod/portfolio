@@ -6,15 +6,21 @@
     -moz-osx-font-smoothing: grayscale;
 }
 html, body{
+    overscroll-behavior: auto none;
     width: 100%;
     height: 100%;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: ghostwhite;
     color: #333;
+    transition-property: background-color, color;
+    transition-duration: .5s;
+}
+body.blackout{
+    background-color: black;
 }
 #wrapper{
     width: 100%;
-    height: 100vh;
+    height: 100svh;
     position: relative;
     display: flex;
     justify-content: flex-end;
@@ -24,13 +30,17 @@ html, body{
 .line{
     display: inline-block;
     width: 40px;
-    height: 3px;
+    height: 2.5px;
     background-color: #333;
     margin-left: 4px;
     vertical-align: middle;
 }
+.blackout .line{
+    background-color: ghostwhite;
+}
 p{
     font-size: 20px;
+    line-height: 22px;
     font-weight: bold;
 }
 #about{
@@ -38,6 +48,18 @@ p{
     left: 24px;
     top: 24px;
     max-width: 280px;
+}
+.blackout #about{
+    color: ghostwhite;
+}
+#copy{
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    font-size: 14px;
+}
+.blackout #copy{
+    color: ghostwhite;
 }
 #project_nav{
     position: absolute;
@@ -65,27 +87,35 @@ p{
     overflow-x: auto;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
-    height: 50%;
-    padding-left: 40%;
-    padding-right: 30%;
+    height: 100%;
+    padding-left: 50%;
+    padding-right: 50%;
     /** hide scrollbar */
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* Internet Explorer and Edge */
+
+    transition-duration: .5s;
+}
+.blackout #project_preview_container{
+    opacity: 0.5;
+    pointer-events: none;
 }
 .project_preview {
-    width: 10vw;
-    min-width: 10vw;
+    width: 11vw;
+    min-width: 11vw;
     height: 0%;
     border-radius: 8px;
-    transition-duration: .5s;
+    transition-duration: .4s;
     transition-timing-function: ease-in-out;
-    animation: projectPreview 1s ease-in-out forwards;
+    animation: projectPreview .8s ease-in-out forwards;
     transform-origin: top;
     padding: 10px;
     position: relative;
-    overflow: hidden;
+
+    cursor: pointer;
+    /* overflow: hidden; */
 }
 .project_preview .project_info_container{
     position: absolute;
@@ -93,14 +123,15 @@ p{
     left: 0;
     bottom: 0px;
     padding: 24px;
-    transform: translateY(25px);
+    /* transform: translateY(25px); */
     color: white;
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
     transition-duration: .5s;
 }
 .project_preview .project_info_container h2{
     font-size: 22px;
-    font-weight: bold;
+    font-weight: 500;
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8);
 }
 .project_preview .img_container{
     width: 100%;
@@ -108,6 +139,9 @@ p{
     border-radius: 8px;
     overflow: hidden;
 }
+/* .project_preview:hover .img_container{
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.25);
+} */
 .project_preview .img_container img{
     width: 100%;
     height: 100%;
@@ -118,9 +152,17 @@ p{
     width: 30vw;
     min-width: 30vw;
 }
+.scrolling .project_preview:hover{
+    width: 10vw;
+    min-width: 10vw;
+}
 .project_preview:hover .project_info_container{
     transform: translateY(0px);
     opacity: 1;
+}
+.scrolling .project_preview:hover .project_info_container{
+    transform: translateY(25px);
+    opacity: 0;
 }
 /** add delay to each project preview */
 .project_preview:nth-child(1) {
@@ -156,13 +198,63 @@ p{
 
     }
     100% {
-        height: 100%;
+        height: 50%;
     }
 }
+.project_details_wrapper{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    overflow-y: scroll;
+    padding: 24px 0px;
+    animation: animateDetails .5s ease-in-out forwards;
+    pointer-events: none;
+}
+.project_details_wrapper.remove{
+    animation: animateDetailsOut .5s ease-in-out forwards;
+}
+.project_details{
+    pointer-events: all;
+    margin: 0 auto;
+    max-width: 800px;
+    width: 100%;
+    background: ghostwhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 54px;
+    border-radius: 8px;
+    height: auto;
+}
+.project_details img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@keyframes animateDetails{
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+@keyframes animateDetailsOut{
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
 @media screen and (max-width: 768px) {
     #project_preview_container{
         width: 100%;
-        height: 50%;
+        height: 100%;
         padding-left: 18px;
         padding-right: 18px;
     }
@@ -178,5 +270,8 @@ p{
     .project_preview .project_info_container{
         opacity: 1;
         transform: translateY(0px);
+    }
+    .project_details_wrapper{
+        padding: 54px 24px;
     }
 }
