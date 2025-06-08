@@ -286,7 +286,7 @@ h3{
     padding-left: 400px;
     padding-right: 15vw;
     animation: animateDetails .5s ease-in-out forwards;
-    pointer-events: none;
+    
 }
 .project_details_wrapper.remove{
     animation: animateDetailsOut .5s ease-in-out forwards;
