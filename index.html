@@ -7,15 +7,23 @@
     <title>Caroline Ambjørnrød</title>
 </head>
 <body>
-    <div id="wrapper">
+    <div id="wrapper" class="container">
+        <div class="follower"></div>
+        <div class="point"></div>
         <div id="about">
             <p>Caro<span class="line"></span> is an independent graphic designer based in Oslo, Norway.</p>
         </div>
         <nav>
-            <button class="nav_btn active">Projects</button>
-            <button class="nav_btn">About</button>
+            <button class="nav_btn active" href="project_preview_container">Projects</button>
+            <button class="nav_btn" href="about_container">About</button>
         </nav>
-        <div id="project_preview_container"></div>
+        <div id="project_preview_container" class="content_section visible"></div>
+        <div id="about_container" class="content_section">
+            <div id="about_text">
+                <p>Caroline Ambjørnrød is a graphic designer based in Oslo, Norway. She specializes in creating visual identities, editorial design, and digital experiences. With a keen eye for detail and a passion for aesthetics, she brings brands to life through thoughtful design solutions.</p>
+            </div>
+            <img id="about_img" src="caro.jpg" alt="Caroline Ambjørnrød">
+        </div>
         <div id="project_nav"></div>
         <div id="copy">
             <p>© 2025 Caro<span class="line"></span>

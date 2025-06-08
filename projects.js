@@ -1,4 +1,5 @@
 const projects = [
+    // Beri Farhadi
     {
         title: "Beri Farhadi",
         subtitle: "No Friends but the Mountains",
@@ -34,6 +35,28 @@ const projects = [
                 src: "beri/beri_video_02.mp4",
                 width: 'half',
             }
+        ]
+    },
+    // Bolckow
+    {
+        title: "Bolckow",
+        subtitle: "Branding & Visual Identity",
+        description: "Branding and visual identity for Bolckow, a new restaurant in the heart of Berlin. The design reflects the restaurant's modern yet rustic atmosphere.",
+        tags: ["Branding", "Visual identity", "Restaurant"],
+        mainImage: "bolckow/Bolckow_sign_small.jpg",
+        media: [
+
+        ]
+    },
+    // Gamle skobutikken
+    {
+        title: "Gamle skobutikken",
+        subtitle: "Branding & Visual Identity",
+        description: "Branding and visual identity for Gamle skobutikken, a shoe store in Oslo. The design captures the essence of the store's heritage and modern appeal.",
+        tags: ["Branding", "Visual identity", "Retail"],
+        mainImage: "gamle_skobutikken/gamle_skobutikken_main.jpg",
+        media: [
+            
         ]
     }
 ];

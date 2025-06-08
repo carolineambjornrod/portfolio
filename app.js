@@ -1,18 +1,3 @@
-const projectNav = document.querySelector("#project_nav");
-// Loop through the projects and create a link (a tag) for each project
-// projects.forEach((project) => {
-//     createProjectLink(project);
-// });
-
-function createProjectLink(project){
-    const projectLink = document.createElement("div");
-    projectLink.href = `#${project.title}`;
-    projectLink.classList.add("project_nav_btn");
-    projectLink.innerText = project.title;
-    projectNav.appendChild(projectLink);
-}
-// const currProj = 0;
-
 function loadProjectPreviews(){
     projects.forEach((project, index) => {
         const projectPreview = document.createElement("a");
@@ -22,6 +7,7 @@ function loadProjectPreviews(){
         projectPreview.innerHTML = `
             <div class="project_info_container">
                 <h2>${project.title}</h2>
+                <p>${project.subtitle}</p>
             </div>
             <div class="img_container">
                 <img src="${project.mainImage}" alt="${project.title} main image" class="main_image">
@@ -47,18 +33,7 @@ projectPreviewContainer.addEventListener('wheel', (event) => {
 
 // Add class to project preview if user is scrolling, remove if scrolling stopped
 let isScrolling = false;
-// let lastScrollLeft = 0;
 projectPreviewContainer.addEventListener('scroll', () => {
-    // const currentScrollLeft = projectPreviewContainer.scrollLeft;
-    // if (currentScrollLeft > lastScrollLeft) {
-    //     projectPreviewContainer.classList.remove('scrolling_left');
-    //     projectPreviewContainer.classList.add('scrolling_right');
-    // } else {
-    //     projectPreviewContainer.classList.remove('scrolling_right');
-    //     projectPreviewContainer.classList.add('scrolling_left');
-    // }
-    // lastScrollLeft = currentScrollLeft;
-
     if (!isScrolling) {
         projectPreviewContainer.classList.add('scrolling');
         isScrolling = true;
@@ -69,6 +44,8 @@ projectPreviewContainer.addEventListener('scroll', () => {
         isScrolling = false;
     }, 100);
 }, { passive: true });
+
+let projectOpen = false;
 
 function showProject(elem, project){
     const projectPreview = elem.closest('.project_preview');
@@ -109,22 +86,134 @@ function showProject(elem, project){
         </div>
     `;
     document.querySelector('#wrapper').appendChild(projectDetailsWrapper);
+    setTimeout(() => {
+        projectOpen = true;
+    }, 300);
+
 }
 document.querySelector('#wrapper').addEventListener('click', (event) => {
-    if (event.target.id === 'wrapper') closeProjectDetails();
+    // Check if project details are open
+
+    if (!checkIfClickIsInsideProjectDetails(event.target) && projectOpen) closeProjectDetails();
 }, { passive: true });
 
 function closeProjectDetails() {
     const activePreviews = document.querySelectorAll('.project_preview.active');
-    activePreviews.forEach(preview => {
-        preview.classList.remove('active');
-    });
     const existingDetails = document.querySelector('.project_details_wrapper');
     if (existingDetails) {
         existingDetails.classList.add('remove')
         setTimeout(() => {
             existingDetails.remove();
-        }, 500);
+            activePreviews.forEach(preview => {
+                preview.classList.remove('active');
+            });
+        }, 200);
     }
     document.querySelector('body').classList.remove('blackout');
+    projectOpen = false;
 }
+
+function checkIfClickIsInsideProjectDetails(target) {
+    // check if elemnt is or has parent with class project_details
+    let currentElement = target;
+    while (currentElement) {
+        if (currentElement.classList && currentElement.classList.contains('project_details')) {
+            return true;
+        }
+        currentElement = currentElement.parentElement;
+    }
+    return false;
+}
+
+// add clickevent to nav_btns
+document.querySelectorAll('.nav_btn').forEach(btn => {
+    btn.addEventListener('click', (event) => {
+        event.preventDefault();
+        // Remove active class from all nav_btns
+        document.querySelectorAll('.nav_btn').forEach(button => {
+            button.classList.remove('active');
+        });
+        // Add active class to clicked nav_btn
+        event.target.classList.add('active');
+        const target = event.target.getAttribute('href');
+        // Remove visible class from all content_sections
+
+        if(projectOpen){
+            setTimeout(() => {
+                document.querySelectorAll('.content_section').forEach(section => {
+                    section.classList.remove('visible');
+                });    
+                const targetSection = document.getElementById(target);
+                if (targetSection) {
+                    targetSection.classList.add('visible');
+                }
+            }, 800);
+        } else {
+            document.querySelectorAll('.content_section').forEach(section => {
+                section.classList.remove('visible');
+            });
+            const targetSection = document.getElementById(target);
+            if (targetSection) {
+                targetSection.classList.add('visible');
+            }
+        }
+        // Add visible class to target section
+    });
+});
+
+class MouseTracking {
+    constructor(containerSelector, followerSelector, inertia = 10) {
+      this.$container = document.querySelector(containerSelector);
+      this.$follower = document.querySelector(followerSelector);
+      this.inertia = inertia > 0 ? inertia : 1;
+  
+      this.getDims();
+      this.xPos = this.maxW / 2;
+      this.yPos = this.maxH / 2;
+      this.mouseX = this.maxW / 2;
+      this.mouseY = this.maxH / 2;
+  
+      this.bindEvents();
+      this.update();
+    }
+  
+    getDims() {
+      this.maxW = this.$container.clientWidth;
+      this.maxH = this.$container.clientHeight;
+  
+      this.elemWidth = this.$follower.getBoundingClientRect().width;
+      this.elemHeight = this.$follower.getBoundingClientRect().height;
+    }
+  
+    onMouse(e) {
+      this.mouseX = e.clientX;
+      this.mouseY = e.clientY;
+    }
+  
+    bindEvents() {
+      window.onresize = () => {
+        this.getDims();
+      };
+      this.$container.addEventListener("mousemove", this.onMouse.bind(this));
+    }
+  
+    update() {
+      let dX = this.mouseX - this.xPos - this.elemWidth / 2;
+      let dY = this.mouseY - this.yPos - this.elemHeight / 2;
+  
+      this.xPos += dX / this.inertia;
+      this.yPos += dY / this.inertia;
+  
+      this.xPrct = (100 * this.xPos) / this.maxW;
+      this.yPrct = (100 * this.yPos) / this.maxH;
+  
+      this.$follower.style.transform =
+        "translate3D(" + this.xPos + "px, " + this.yPos + "px, 0)";
+  
+      requestAnimationFrame(this.update.bind(this));
+    }
+  }
+  
+  new MouseTracking(".container", ".follower", 10);
+  new MouseTracking(".container", ".point", 3);
+  
