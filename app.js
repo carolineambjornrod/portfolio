@@ -142,25 +142,35 @@ document.querySelectorAll('.nav_btn').forEach(btn => {
             setTimeout(() => {
                 document.querySelectorAll('.content_section').forEach(section => {
                     section.classList.remove('visible');
-                });    
-                const targetSection = document.getElementById(target);
-                if (targetSection) {
-                    targetSection.classList.add('visible');
-                }
+                });
+                setTimeout(() => {
+                    const targetSection = document.getElementById(target);
+                    if (targetSection) {
+                        targetSection.classList.add('visible');
+                    }
+                }, 500);
             }, 800);
         } else {
             document.querySelectorAll('.content_section').forEach(section => {
                 section.classList.remove('visible');
             });
-            const targetSection = document.getElementById(target);
-            if (targetSection) {
-                targetSection.classList.add('visible');
-            }
+            setTimeout(() => {
+                const targetSection = document.getElementById(target);
+                if (targetSection) {
+                    targetSection.classList.add('visible');
+                }
+            }, 500);
         }
         // Add visible class to target section
     });
 });
 
+// dont show if user is on mobile
+if(isMobile()){
+    document.querySelector('.follower').style.display = 'none';
+    document.querySelector('.point').style.display = 'none';
+}
+if(!isMobile()){
 class MouseTracking {
     constructor(containerSelector, followerSelector, inertia = 10) {
       this.$container = document.querySelector(containerSelector);
@@ -216,4 +226,8 @@ class MouseTracking {
   
   new MouseTracking(".container", ".follower", 10);
   new MouseTracking(".container", ".point", 3);
-  
+}
+  // Check if user is on mobile
+    function isMobile() {
+        return /Mobi|Android/i.test(navigator.userAgent);
+    }

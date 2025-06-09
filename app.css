@@ -56,6 +56,8 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    
+    gap: 1px;
 }
 nav button{
     background: none;
@@ -175,7 +177,7 @@ h3{
     opacity: 1;
 }
 .blackout #project_preview_container{
-    opacity: 0.5;
+    opacity: 0.2;
     pointer-events: none;
 }
 .project_preview {
@@ -407,18 +409,22 @@ h3{
 
 @media screen and (max-width: 768px) {
     nav{
-        top: 12px;
+        top: 13px;
         left: auto;
         right: 12px;
         flex-direction: column;
         align-items: flex-end;
-        gap: 8px;
+        gap: 21px;
     }
     nav button{
         font-size: 16px;
     }
     nav button:hover{
         padding-left: 0px;
+    }
+    h3{
+        font-size: 16px;
+        margin-bottom: 32px;
     }
     p{
         font-size: 16px;
@@ -443,17 +449,24 @@ h3{
     }
     #project_preview_container{
         overflow-x: auto;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    #about_container{
         padding-left: 12px;
         padding-right: 12px;
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 32px;
     }
     .project_preview {
-        width: 45vw;
-        min-width: 45vw;
+        width: 50vw;
+        min-width: 50vw;
         padding: 4px;
     }
     .project_preview:hover{
-        width: 45vw;
-        min-width: 45vw;
+        width: 50vw;
+        min-width: 50vw;
     }
     .project_preview .project_info_container{
         opacity: 1;
@@ -464,6 +477,27 @@ h3{
         font-size: 18px;
     }
     .project_details_wrapper{
-        padding: 12px 12px;
+        padding: 124px 12px 54px 12px;
+    }
+    .project_details{
+        padding: 16px;
+    }
+    .project_details_tags p{
+        font-size: 14px;
+    }
+    .project_details_intro{
+        margin-bottom: 32px;
+    }
+    .project_details img.main_image{
+        margin-bottom: 24px;
+    }
+    .project_media{
+        gap: 24px;
+    }
+    .project_media .full{
+        grid-column: span 2;
+    }
+    .project_media .half{
+        grid-column: span 2;
     }
 }
