@@ -61,7 +61,7 @@ nav{
     
     gap: 2px;
 }
-nav button{
+button{
     background: none;
     border: none;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -74,13 +74,13 @@ nav button{
 .blackout nav button{
     color: ghostwhite;
 }
-nav button:hover{
+button:hover{
     padding-left: 24px;
 }
-nav button.active{
+button.active{
     text-decoration: line-through;
 }
-nav button.active:hover{
+button.active:hover{
     padding-left: 0px;
     /* cursor: default; */
 }
@@ -112,7 +112,7 @@ p{
 }
 h3{
     font-size: 18px;
-    margin-bottom: 54px;
+    margin-bottom: 16px;
     font-weight: bold;
 }
 #about{
@@ -145,7 +145,7 @@ a:hover{
     padding-left: 24px;
 }
 #some{
-    position: absolute;
+    position: fixed;
     left: 400px;
     bottom: 24px;
     font-weight: bold;
@@ -308,15 +308,14 @@ a:hover{
 }
 .close_project_details{
     position: absolute;
-    top: -32px;
+    top: -40px;
     right: 0px;
     background-color: transparent;
     border: none;
     cursor: none;
     color: white;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    opacity: .4;
+    font-size: 24px;
 }
 .project_details{
     position: relative;
@@ -328,7 +327,7 @@ a:hover{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     padding: 54px 32px;
     border-radius: 8px;
     height: auto;
@@ -346,11 +345,20 @@ a:hover{
 .project_details img.main_image{
     margin-bottom: 32px;
 }
+.project_details h2{
+    font-size: 22px;
+    margin-bottom: 6px;
+}
 .project_details_intro{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 54px;
+    margin-bottom: 24px;
+}
+.project_description{
+    width: 100%;
+    max-width: 620px;
+    margin-bottom: 24px;
 }
 .project_details_intro div:first-of-type{
     width: 65%;
@@ -462,6 +470,10 @@ table td:first-child{
     }
 }
 
+.back_to_overview{
+    margin: 32px 0px;
+}
+
 @media screen and (max-width: 768px) {
     nav{
         top: 13px;
@@ -479,7 +491,7 @@ table td:first-child{
     }
     h3{
         font-size: 16px;
-        margin-bottom: 32px;
+        margin-bottom: 8px;    
     }
     p{
         font-size: 16px;
@@ -495,6 +507,12 @@ table td:first-child{
         position: absolute;
         left: 12px;
         bottom: 12px;
+    }
+    #some{
+        left: auto;
+        right: 12px;
+        bottom: 12px;
+        gap: 4px;
     }
     .line{
         width: 30px;
@@ -559,22 +577,31 @@ table td:first-child{
         line-height: 18px;
     }
     .project_details_wrapper{
-        padding: 124px 12px 64px 12px;
+        padding: 92px 12px 92px 12px;
     }
     .project_details{
         padding: 12px;
+        padding-top: 54px;
+    }
+    .project_details h2{
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+    .close_project_details{
+        top: 12px;
+        right: 12px;
+        font-size: 24px;
+        color: #161616;
+        opacity: 1;
     }
     .project_details_tags p{
         font-size: 14px;
-    }
-    .project_details_intro{
-        margin-bottom: 32px;
     }
     .project_details img.main_image{
         margin-bottom: 24px;
     }
     .project_media{
-        gap: 24px;
+        gap: 12px;
     }
     .project_media .full{
         grid-column: span 2;

@@ -58,17 +58,17 @@ function showProject(elem, project){
     projectDetailsWrapper.classList.add("project_details_wrapper");
     projectDetailsWrapper.innerHTML = `
         <div class="project_details">
-            <button class="close_project_details" onclick="closeProjectDetails()">Close &#10005;</button>
+            <button class="close_project_details" onclick="closeProjectDetails()">&#10005;</button>
             <div class="project_details_intro">
                 <div>
                     <h2>${project.title}</h2>
                     <h3>${project.subtitle}</h3>
-                    <p>${project.description}</p>
                 </div>
                 <div class="project_details_tags">
                     ${project.tags.map(tag => `<p>${tag}</p>`).join('')}
                 </div>
             </div>
+            <p class="project_description">${project.description}</p>
             <div class="project_media">
             ${project.media.map(media => `
                 ${media.src.includes('mp4') ? `
@@ -84,6 +84,7 @@ function showProject(elem, project){
                 `}
             `).join('')}
             </div>
+            <button class="back_to_overview" onclick="closeProjectDetails()">Back to projects</button>
         </div>
     `;
     document.querySelector('#wrapper').appendChild(projectDetailsWrapper);
