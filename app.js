@@ -1,7 +1,6 @@
 function loadProjectPreviews(){
     projects.forEach((project, index) => {
-        const projectPreview = document.createElement("a");
-        projectPreview.href = ``;
+        const projectPreview = document.createElement("div");
         projectPreview.classList.add("project_preview");
         projectPreview.id = project.title;
         projectPreview.innerHTML = `
@@ -70,14 +69,16 @@ function showProject(elem, project){
                     ${project.tags.map(tag => `<p>${tag}</p>`).join('')}
                 </div>
             </div>
-            <img src="${project.mainImage}" alt="${project.title} main image" class="main_image">
             <div class="project_media">
             ${project.media.map(media => `
                 ${media.src.includes('mp4') ? `
-                <video class="project_details_image ${media.width}" autoplay muted playsinline loop>
-                    <source src="${media.src}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <div class="video_container ${media.width}">
+                    <video onclick={toggleVideoPause(this)} autoplay muted playsinline loop>
+                        <source src="${media.src}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video_hint">Click video to pause</div>
+                </div>
                 ` : `
                 <img src="${media.src}" alt="${media.alt}" class="project_details_image ${media.width}" loading="lazy">
                 `}
@@ -89,21 +90,31 @@ function showProject(elem, project){
     setTimeout(() => {
         projectOpen = true;
     }, 300);
-
 }
+function toggleVideoPause(video) {
+    if (video.paused) {
+        video.play();
+    } else {
+        video.pause();
+    }
+};
 document.querySelector('#wrapper').addEventListener('click', (event) => {
     // Check if project details are open
-
     if (!checkIfClickIsInsideProjectDetails(event.target) && projectOpen) closeProjectDetails();
 }, { passive: true });
 
 function closeProjectDetails() {
     const activePreviews = document.querySelectorAll('.project_preview.active');
-    const existingDetails = document.querySelector('.project_details_wrapper');
+    const existingDetails = document.querySelectorAll('.project_details_wrapper');
     if (existingDetails) {
-        existingDetails.classList.add('remove')
+        existingDetails.forEach(details => {
+            details.classList.add('remove')
+        });
         setTimeout(() => {
-            existingDetails.remove();
+            
+            existingDetails.forEach(details => {
+                details.remove();
+            });
             activePreviews.forEach(preview => {
                 preview.classList.remove('active');
             });
@@ -111,6 +122,11 @@ function closeProjectDetails() {
     }
     document.querySelector('body').classList.remove('blackout');
     projectOpen = false;
+
+    // Reset the URL to the main page
+    if (window.history && window.history.pushState) {
+        window.history.pushState({}, '', window.location.pathname);
+    }
 }
 
 function checkIfClickIsInsideProjectDetails(target) {
@@ -165,69 +181,114 @@ document.querySelectorAll('.nav_btn').forEach(btn => {
     });
 });
 
+// Close project details when esc key is pressed
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && projectOpen) {
+        closeProjectDetails();
+    }
+});
+
+// Add case title to url history
+if (window.history && window.history.pushState) {
+    document.querySelectorAll('.project_preview').forEach(preview => {
+        preview.addEventListener('click', (event) => {
+            const projectTitle = event.target.closest('.project_preview').id;
+            window.history.pushState({ title: projectTitle }, projectTitle, `#${projectTitle}`);
+        });
+    });
+}
+// when user goes back in history, check if there is a project title in the url
+window.addEventListener('popstate', (event) => {
+    if (event.state && event.state.title) {
+        const projectTitle = event.state.title;
+        const projectPreview = document.getElementById(projectTitle);
+        if (projectPreview) {
+            showProject(projectPreview, projects.find(p => p.title === projectTitle));
+
+            // Remove active class from all nav_btns
+            document.querySelectorAll('.nav_btn').forEach(button => {
+                button.classList.remove('active');
+            });
+            // Add active class to clicked nav_btn
+            document.querySelector('#project_btn').classList.add('active');
+
+            document.querySelectorAll('.content_section').forEach(section => {
+                section.classList.remove('visible');
+            });
+            setTimeout(() => {
+                const targetSection = document.getElementById('project_preview_container');
+                if (targetSection) {
+                    targetSection.classList.add('visible');
+                }
+            }, 500);
+        } else {
+            closeProjectDetails();
+        }
+    } else {
+        closeProjectDetails();
+    }
+});
+
 // dont show if user is on mobile
 if(isMobile()){
     document.querySelector('.follower').style.display = 'none';
     document.querySelector('.point').style.display = 'none';
 }
 if(!isMobile()){
-class MouseTracking {
-    constructor(containerSelector, followerSelector, inertia = 10) {
-      this.$container = document.querySelector(containerSelector);
-      this.$follower = document.querySelector(followerSelector);
-      this.inertia = inertia > 0 ? inertia : 1;
-  
-      this.getDims();
-      this.xPos = this.maxW / 2;
-      this.yPos = this.maxH / 2;
-      this.mouseX = this.maxW / 2;
-      this.mouseY = this.maxH / 2;
-  
-      this.bindEvents();
-      this.update();
-    }
-  
-    getDims() {
-      this.maxW = this.$container.clientWidth;
-      this.maxH = this.$container.clientHeight;
-  
-      this.elemWidth = this.$follower.getBoundingClientRect().width;
-      this.elemHeight = this.$follower.getBoundingClientRect().height;
-    }
-  
-    onMouse(e) {
-      this.mouseX = e.clientX;
-      this.mouseY = e.clientY;
-    }
-  
-    bindEvents() {
-      window.onresize = () => {
-        this.getDims();
-      };
-      this.$container.addEventListener("mousemove", this.onMouse.bind(this));
-    }
-  
-    update() {
-      let dX = this.mouseX - this.xPos - this.elemWidth / 2;
-      let dY = this.mouseY - this.yPos - this.elemHeight / 2;
-  
-      this.xPos += dX / this.inertia;
-      this.yPos += dY / this.inertia;
-  
-      this.xPrct = (100 * this.xPos) / this.maxW;
-      this.yPrct = (100 * this.yPos) / this.maxH;
-  
-      this.$follower.style.transform =
-        "translate3D(" + this.xPos + "px, " + this.yPos + "px, 0)";
-  
-      requestAnimationFrame(this.update.bind(this));
-    }
-  }
-  
-  new MouseTracking(".container", ".follower", 10);
-  new MouseTracking(".container", ".point", 3);
+    function createMouseTracker(containerSelector, followerSelector, inertia = 10) {
+        const $container = document.querySelector(containerSelector);
+        const $follower = document.querySelector(followerSelector);
+        inertia = inertia > 0 ? inertia : 1;
+      
+        let maxW, maxH, elemWidth, elemHeight;
+        let xPos, yPos, mouseX, mouseY;
+      
+        function getDims() {
+          maxW = $container.clientWidth;
+          maxH = $container.clientHeight;
+          const rect = $follower.getBoundingClientRect();
+          elemWidth = rect.width;
+          elemHeight = rect.height;
+        }
+      
+        function onMouse(e) {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          document.querySelector('.follower').style.opacity = 1;
+        document.querySelector('.point').style.opacity = 1;
+        }
+      
+        function update() {
+          const dX = mouseX - xPos - elemWidth / 2;
+          const dY = mouseY - yPos - elemHeight / 2;
+      
+          xPos += dX / inertia;
+          yPos += dY / inertia;
+      
+          $follower.style.transform = `translate3D(${xPos}px, ${yPos}px, 0)`;
+      
+          requestAnimationFrame(update);
+        }
+      
+        // Initialize
+        getDims();
+        xPos = maxW / 2;
+        yPos = maxH / 2;
+        mouseX = maxW / 2;
+        mouseY = maxH / 2;
+      
+        window.addEventListener('resize', getDims);
+        $container.addEventListener('mousemove', onMouse);
+      
+        update();
+      }
+      
+      // Usage:
+      createMouseTracker(".container", ".follower", 10);
+      createMouseTracker(".container", ".point", 3);
+      
 }
-  // Check if user is on mobile
-    function isMobile() {
-        return /Mobi|Android/i.test(navigator.userAgent);
-    }
+// Check if user is on mobile
+function isMobile() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+}
