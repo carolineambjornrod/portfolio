@@ -225,7 +225,7 @@ a:hover{
     border-bottom-right-radius: 8px;
 }
 .project_preview .project_info_container h2{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     /* text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8); */
 }
@@ -255,7 +255,7 @@ a:hover{
 .project_preview:hover .project_info_container{
     opacity: 1;
     transition-duration: .5s;
-    transition-delay: .35s;
+    transition-delay: .25s;
 }
 /** add delay to each project preview */
 .project_preview:nth-child(1) {
@@ -351,7 +351,7 @@ a:hover{
     margin-bottom: 32px;
 }
 .project_details h2{
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 6px;
 }
 .project_details_intro{
@@ -369,6 +369,7 @@ a:hover{
     width: 65%;
 }
 .project_media{
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
@@ -483,6 +484,13 @@ table td:first-child{
     align-items: center;
     margin: 32px 0px;
 }
+.back_to_overview:hover{
+    padding-left: 0px;
+}
+.project_btns button{
+    font-weight: normal;
+}
+
 @media screen and (max-width: 768px) {
     nav{
         top: 13px;
@@ -542,19 +550,43 @@ table td:first-child{
         flex-direction: column;
         justify-content: flex-start;
         gap: 24px;
-        padding-top: 24px;
+        padding-top: 16px;
         padding-bottom: 54px;
     }
     #about_img{
-        aspect-ratio: 1.5 / 1;
+        aspect-ratio: 1 / 1;
         width: 100%;
         max-width: 100%;
         border-radius: 8px;
     }
     .project_preview {
-        width: 65vw;
-        min-width: 65vw;
+        width: 10vw;
+        min-width: 10vw;
         padding: 4px;
+        animation-duration: 1.75s;
+    }
+    @keyframes projectPreview{
+        0% {
+            height: 0%;
+            width: 10vw;
+            min-width: 10vw;
+    
+        }
+        30%{
+            width: 10vw;
+            min-width: 10vw;
+            height: 65%;
+        }
+        50%{
+            width: 10vw;
+            min-width: 10vw;
+            height: 65%;
+        }
+        100% {
+            width: 65vw;
+            min-width: 65vw;
+            height: 65%;
+        }
     }
     .project_preview:hover{
         width: 65vw;
@@ -568,7 +600,7 @@ table td:first-child{
         bottom: 4px;
         width: calc(100% - 8px);
         animation: projectPreviewMobile 1s ease-in-out forwards;
-        animation-delay: .25s;
+        animation-delay: 1.5s;
     }
     @keyframes projectPreviewMobile{
         0% {

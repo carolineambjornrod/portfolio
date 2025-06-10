@@ -70,19 +70,28 @@ function showProject(elem, project){
             </div>
             <p class="project_description">${project.description}</p>
             <div class="project_media">
-            ${project.media.map(media => `
-                ${media.src.includes('mp4') ? `
-                <div class="video_container ${media.width}">
-                    <video onclick={toggleVideoPause(this)} autoplay muted playsinline loop>
-                        <source src="${media.src}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="video_hint">Click to toggle video</div>
-                </div>
-                ` : `
-                <img src="${media.src}" alt="${media.alt}" class="project_details_image ${media.width}" loading="lazy">
-                `}
-            `).join('')}
+                ${project.media.map(media => `
+                    ${media.src.includes('mp4') ? `
+                        ${media.hasSound ? `
+                            <div class="video_container ${media.width}">
+                                <video controls playsinline>
+                                    <source src="${media.src}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        ` : `
+                            <div class="video_container ${media.width}">
+                                <video onclick="toggleVideoPause(this)" autoplay muted playsinline loop>
+                                    <source src="${media.src}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video_hint">Click to toggle video</div>
+                            </div>
+                        `}
+                    ` : `
+                        <img src="${media.src}" alt="${media.alt}" class="project_details_image ${media.width}" loading="lazy">
+                    `}
+                `).join('')}
             </div>
             <div class="project_btns">
                 <button class="back_to_overview" onclick="closeProjectDetails()">Back to projects</button>

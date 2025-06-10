@@ -1,109 +1,278 @@
 const projects = [
     // Beri Farhadi
+    // DONE
     {
         title: "Beri Farhadi",
         subtitle: "No Friends but the Mountains",
         description: "Visual profile for Beri Farhadi’s first EP release “No Friends But The Mountains” displayed on Spotify. It is a daring portrayal of escape and the emotions associated with it.",
-        tags: ["Visual identity", "Branding", "Photo"],
+        tags: ["Visual identity", "Branding", "Photography"],
         mainImage: "beri/beri01.jpg",
         media: [
             {
                 src: "beri/beri01.jpg",
-                alt: "Beri Farhadi main image",
+                alt: "Beri Farhadi",
                 width: 'full',
             },
             {
                 src: "beri/beri02.jpg",
-                alt: "Beri Farhadi image 2",
+                alt: "Beri Farhadi",
                 width: 'full',
             },
             {
                 src: "beri/beri03.jpg",
-                alt: "Beri Farhadi image 3",
-                width: 'half',
-            },
-            {
-                src: "beri/beri04.jpg",
-                alt: "Beri Farhadi image 4",
-                width: 'half',
-            },
-            {
-                src: "beri/beri_video_01.mp4",
+                alt: "Beri Farhadi",
                 width: 'full',
             },
             {
-                src: "beri/beri_video_02.mp4",
+                src: "beri/beri04.mp4",
+                alt: "Beri Farhadi",
+                width: 'full',
+            },
+            {
+                src: "beri/beri05.jpg",
+                alt: "Beri Farhadi",
                 width: 'half',
-            }
+            },
+            {
+                src: "beri/beri06.jpg",
+                alt: "Beri Farhadi",
+                width: 'half',
+            },
+            {
+                src: "beri/beri07.jpg",
+                alt: "Beri Farhadi",
+                width: 'half',
+            },
+            {
+                src: "beri/beri08.jpg",
+                alt: "Beri Farhadi",
+                width: 'half',
+            },
+            {
+                src: "beri/beri09.jpg",
+                alt: "Beri Farhadi",
+                width: 'half',
+            },
+            {
+                src: "beri/beri10.jpg",
+                alt: "Beri Farhadi",
+                width: 'half',
+            },
+            {
+                src: "beri/beri11.mp4",
+                alt: "Beri Farhadi",
+                width: 'full',
+            },
         ]
     },
     // Bolckow
+    // DONE
     {
-        title: "Middlesbrough Central Library, North Yorkshire, England.",
+        title: "Middlesbrough Central Library",
         subtitle: "Bolckow",
         description: "The identity for Middlesbrough Central Library is bold, contemporary and playful. It reflects the vibrancy of the town. Inspired by the diversity of the people, culture and history. Connecting the old and the new, the classic and the modern.",
         tags: ["Visual identity", "Branding"],
-        mainImage: "bolckow/Bolckow_sign_small.jpg",
+        mainImage: "bolckow/bolckow01.jpg",
         media: [
             {
-                src: "bolckow/bolckow-2000x1500.mp4",
+                src: "bolckow/bolckow01.jpg",
+                alt: "Bolckow",
+                width: 'full',
+            },
+            {
+                src: "bolckow/bolckow02.mp4",
+                width: 'full',
+            },
+            {
+                src: "bolckow/bolckow03.jpg",
+                alt: "Bolckow",
+                width: 'full',
+            },
+            {
+                src: "bolckow/bolckow04.jpg",
+                alt: "Bolckow",
+                width: 'full',
+            },
+            {
+                src: "bolckow/bolckow05.jpg",
+                alt: "Bolckow",
+                width: 'full',
+            },
+            {
+                src: "bolckow/bolckow06.jpg",
+                alt: "Bolckow",
                 width: 'full',
             },
         ]
     },
     // Gamle skobutikken
+    // DONE
     {
-        title: "Gamle skobutikken",
-        subtitle: "Club concept, Take Over",
-        description: "Promotion posters for Gamle Skobutikken and their club concept  “Take Over”. DGS is a well known bar located in Oslo, Norway.",
+        title: "Den Gamle Skobutikken",
+        subtitle: "Take Over",
+        description: "Promotion posters for Den Gamle Skobutikken and their club concept  “Take Over”. DGS is a well known bar located in Oslo, Norway.",
         tags: ["Promotion", "Illustration", "Typografi"],
-        mainImage: "gamle_skobutikken/gamle_skobutikken_main.jpg",
+        mainImage: "gamle_skobutikken/gamle_skobutikken04.jpg",
         media: [
-
+            {
+                src: "gamle_skobutikken/gamle_skobutikken01.jpg",
+                alt: "Gamle skobutikken",
+                width: 'full',
+            },
+            {
+                src: "gamle_skobutikken/gamle_skobutikken02.jpg",
+                alt: "Gamle skobutikken",
+                width: 'full',
+            },
+            {
+                src: "gamle_skobutikken/gamle_skobutikken03.jpg",
+                alt: "Gamle skobutikken",
+                width: 'full',
+            },
+            {
+                src: "gamle_skobutikken/gamle_skobutikken04.jpg",
+                alt: "Gamle skobutikken",
+                width: 'full',
+            },
+        ]
+    },
+    // Poster
+    // DONE
+    {
+        title: "Poster",
+        subtitle: "Illustration design",
+        description: "Illustrated poster design for personal use.",
+        tags: ["Illustration"],
+        mainImage: "poster/poster01.jpg",
+        media: [
+            {
+                src: "poster/poster01.jpg",
+                alt: "Poster",
+                width: 'full',
+            },
+            {
+                src: "poster/poster02.jpg",
+                alt: "Poster",
+                width: 'full',
+            },
+            {
+                src: "poster/poster03.jpg",
+                alt: "Poster",
+                width: 'full',
+            },
+            {
+                src: "poster/poster04.jpg",
+                alt: "Poster",
+                width: 'full',
+            },
         ]
     },
     // Shape Up
+    // DONE
     {
         title: "Story House Egmont",
         subtitle: "Shape Up",
         description: "Relaunch of the magazine “Shape Up”. A magazine which focuses on motivating the reader to be active and make healthy choices. The concept was to create a greater diversity amongst women. Combining a playful layout, strong colours, typography, images and illustrations.",
         tags: ["Editorial Design", "Illustration", "Typografi"],
-        mainImage: "shape-up/shape-up-cover.jpg",
+        mainImage: "shape-up/shape-up01.jpg",
         media: [
-
-        ]
-    },
-    // Poster
-    {
-        title: "Poster",
-        subtitle: "Illustration design",
-        description: "A poster for the Norwegian band “Poster”. The poster is a playful take on the band’s name, using a simple and bold design to create a striking visual impact.",
-        tags: ["Illustration"],
-        mainImage: "poster/waves-illustration-mockup.jpg",
-        media: [
-
+            {
+                src: "shape-up/shape-up01.jpg",
+                alt: "Shape Up",
+                width: 'full',
+            },
+            {
+                src: "shape-up/shape-up02.mp4",
+                alt: "Shape Up",
+                width: 'full',
+            },
+            {
+                src: "shape-up/shape-up03.jpg",
+                alt: "Shape Up",
+                width: 'full',
+            }
         ]
     },
     // Venninepodden
+    // DONE
     {
         title: "Camilla Tehrani",
         subtitle: "Venninnepodden",
         description: "Visual identity for Camilla Tehrani’s podcast “Venninnepodden”. The profile is bold and confident. It features a logo that ties the concept together and creates a balance. The logo matches her feminine but also tough personality and character.",
-        tags: ["Visual identity", "Photo"],
-        mainImage: "venninnepodden/venninepodden_main.jpg",
+        tags: ["Visual identity", "Photography"],
+        mainImage: "venninnepodden/venninnepodden04.jpg",
         media: [
-
+            {
+                src: "venninnepodden/venninnepodden01.jpg",
+                alt: "Venninnepodden",
+                width: 'full',
+            },
+            {
+                src: "venninnepodden/venninnepodden02.jpg",
+                alt: "Venninnepodden",
+                width: 'full',
+            },
+            {
+                src: "venninnepodden/venninnepodden03.jpg",
+                alt: "Venninnepodden",
+                width: 'full',
+            },
+            {
+                src: "venninnepodden/venninnepodden04.jpg",
+                alt: "Venninnepodden",
+                width: 'full',
+            },
+            {
+                src: "venninnepodden/venninnepodden05.jpg",
+                alt: "Venninnepodden",
+                width: 'full',
+            },
         ]
     },
     // Film Fra Sør
     {
-        title: "Film fra Sør",
-        subtitle: "Festival identity",
-        description: "Visual identity for the film festival “Film fra Sør”. The festival is a celebration of films from the Global South. The identity is inspired by the diversity of the films and the cultures they represent.",
-        tags: ["Visual identity", "Branding"],
-        mainImage: "film_fra_sor/ffs_main.jpg",
+        title: "Festivalkontoret",
+        subtitle: "Film fra Sør",
+        description: "In collaboration with Festivalkontoret, a new visual identity was developed for Film fra Sør. Film fra Sør is the capital’s oldest film festival and one of the city’s most important cultural arenas. The visual concept for the festival is inspired by a kaleidoscope and symbolizes the essence of the film festival experience. The festival draws on the mechanics of the kaleidoscope, and three distinct symbols were defined as key graphic elements in the visual identity.",
+        tags: ["Visual identity", "Motion Graphics", "Typography"],
+        mainImage: "film_fra_sor/film_fra_sor_main.jpg",
         media: [
-
+            {
+                src: "film_fra_sor/film_fra_sor01.mp4",
+                alt: "Film fra Sør",
+                width: 'full',
+            },
+            {
+                src: "film_fra_sor/film_fra_sor02.mp4",
+                alt: "Film fra Sør",
+                width: 'full',
+            },
+            {
+                src: "film_fra_sor/film_fra_sor03.jpg",
+                alt: "Film fra Sør",
+                width: 'full',
+            },
+            {
+                src: "film_fra_sor/film_fra_sor04.jpg",
+                alt: "Film fra Sør",
+                width: 'full',
+            },
+            {
+                src: "film_fra_sor/film_fra_sor05.mp4",
+                hasSound: true,
+                alt: "Film fra Sør",
+                width: 'full',
+            },
+            {
+                src: "film_fra_sor/film_fra_sor06.jpg",
+                alt: "Film fra Sør",
+                width: 'full',
+            },
+            {
+                src: "film_fra_sor/film_fra_sor07.jpg",
+                alt: "Film fra Sør",
+                width: 'full',
+            },
         ]
     },
 ];
