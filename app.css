@@ -127,7 +127,7 @@ h3{
     position: absolute;
     left: 24px;
     bottom: 24px;
-    font-weight: bold;
+    /* font-weight: bold; */
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -148,7 +148,7 @@ a:hover{
     position: fixed;
     left: 400px;
     bottom: 24px;
-    font-weight: bold;
+    /* font-weight: bold; */
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -194,9 +194,9 @@ a:hover{
     flex: 1;
     height: 0%;
     border-radius: 8px;
-    transition-duration: .5s;
+    transition-duration: .35s;
     transition-timing-function: ease-in-out;
-    animation: projectPreview 1s ease-in-out forwards;
+    animation: projectPreview .85s ease-in-out forwards;
     transform-origin: top;
     padding: 8px;
     position: relative;
@@ -206,6 +206,9 @@ a:hover{
 .project_preview.active{
     flex: 4;
 }
+/* .project_preview.scaleDown{
+    animation: projectPreview .85s ease-in-out backwards;
+} */
 .project_preview .project_info_container{
     position: absolute;
     opacity: 0;
@@ -216,7 +219,7 @@ a:hover{
     padding-top: 54px;
     color: white;
     /* mix-blend-mode: difference; */
-    transition-duration: .5s;
+    transition-duration: .1s;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -251,6 +254,7 @@ a:hover{
 } */
 .project_preview:hover .project_info_container{
     opacity: 1;
+    transition-duration: .5s;
     transition-delay: .35s;
 }
 /** add delay to each project preview */
@@ -327,8 +331,9 @@ a:hover{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
+    align-items: flex-start;
     padding: 54px 32px;
+    padding-bottom: 0px;
     border-radius: 8px;
     height: auto;
 }
@@ -383,7 +388,7 @@ a:hover{
     font-size: 14px;
     left: 12px;
     bottom: 12px;
-    font-weight: bold;
+    /* font-weight: bold; */
     color: white;
     mix-blend-mode: difference;
 }
@@ -432,7 +437,7 @@ a:hover{
 #about_img{
     height: 65%;
     width: 100%;
-    max-width: 12vw;
+    max-width: 24vw;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -470,10 +475,14 @@ table td:first-child{
     }
 }
 
-.back_to_overview{
+.project_btns{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     margin: 32px 0px;
 }
-
 @media screen and (max-width: 768px) {
     nav{
         top: 13px;
@@ -533,8 +542,8 @@ table td:first-child{
         flex-direction: column;
         justify-content: flex-start;
         gap: 24px;
-        padding-top: 16px;
-        padding-bottom: 24px;
+        padding-top: 24px;
+        padding-bottom: 54px;
     }
     #about_img{
         aspect-ratio: 1.5 / 1;
@@ -582,6 +591,7 @@ table td:first-child{
     .project_details{
         padding: 12px;
         padding-top: 54px;
+        padding-bottom: 0px;
     }
     .project_details h2{
         font-size: 18px;
@@ -608,5 +618,11 @@ table td:first-child{
     }
     .project_media .half{
         grid-column: span 2;
+    }
+
+    .video_hint{
+        font-size: 12px;
+        left: 8px;
+        bottom: 8px;
     }
 }

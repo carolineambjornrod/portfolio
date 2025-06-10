@@ -77,14 +77,17 @@ function showProject(elem, project){
                         <source src="${media.src}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                    <div class="video_hint">Click video to pause</div>
+                    <div class="video_hint">Click to toggle video</div>
                 </div>
                 ` : `
                 <img src="${media.src}" alt="${media.alt}" class="project_details_image ${media.width}" loading="lazy">
                 `}
             `).join('')}
             </div>
-            <button class="back_to_overview" onclick="closeProjectDetails()">Back to projects</button>
+            <div class="project_btns">
+                <button class="back_to_overview" onclick="closeProjectDetails()">Back to projects</button>
+                <button class="next_project" onclick="nextProject('${project.title}')">Next project</button>
+            </div>
         </div>
     `;
     document.querySelector('#wrapper').appendChild(projectDetailsWrapper);
@@ -181,6 +184,20 @@ document.querySelectorAll('.nav_btn').forEach(btn => {
         // Add visible class to target section
     });
 });
+
+// Next project button functionality
+function nextProject(currentTitle) {
+    const currentIndex = projects.findIndex(project => project.title === currentTitle);
+    if (currentIndex !== -1 && currentIndex < projects.length - 1) {
+        const nextProject = projects[currentIndex + 1];
+        const nextProjectPreview = document.getElementById(nextProject.title);
+        if (nextProjectPreview) {
+            showProject(nextProjectPreview, nextProject);
+            // Update URL history
+            window.history.pushState({ title: nextProject.title }, nextProject.title, `#${nextProject.title}`);
+        }
+    }
+}
 
 // Close project details when esc key is pressed
 document.addEventListener('keydown', (event) => {
@@ -285,8 +302,8 @@ if(!isMobile()){
       }
       
       // Usage:
-      createMouseTracker(".container", ".follower", 10);
-      createMouseTracker(".container", ".point", 3);
+      createMouseTracker(".container", ".follower", 7);
+      createMouseTracker(".container", ".point", 1);
       
 }
 // Check if user is on mobile
