@@ -5,7 +5,7 @@ const projects = [
         title: "Beri Farhadi",
         subtitle: "No Friends but the Mountains",
         description: "Visual profile for Beri Farhadi’s first EP release “No Friends But The Mountains” displayed on Spotify. It is a daring portrayal of escape and the emotions associated with it.",
-        tags: ["Visual identity", "Branding", "Photography"],
+        tags: ["Visual Identity", "Branding", "Photography"],
         mainImage: "beri/beri01.jpg",
         media: [
             {
@@ -71,7 +71,7 @@ const projects = [
         title: "Middlesbrough Central Library",
         subtitle: "Bolckow",
         description: "The identity for Middlesbrough Central Library is bold, contemporary and playful. It reflects the vibrancy of the town. Inspired by the diversity of the people, culture and history. Connecting the old and the new, the classic and the modern.",
-        tags: ["Visual identity", "Branding"],
+        tags: ["Visual Identity", "Branding"],
         mainImage: "bolckow/bolckow01.jpg",
         media: [
             {
@@ -199,7 +199,7 @@ const projects = [
         title: "Camilla Tehrani",
         subtitle: "Venninnepodden",
         description: "Visual identity for Camilla Tehrani’s podcast “Venninnepodden”. The profile is bold and confident. It features a logo that ties the concept together and creates a balance. The logo matches her feminine but also tough personality and character.",
-        tags: ["Visual identity", "Photography"],
+        tags: ["Visual Identity", "Photography"],
         mainImage: "venninnepodden/venninnepodden04.jpg",
         media: [
             {
@@ -234,7 +234,7 @@ const projects = [
         title: "Festivalkontoret",
         subtitle: "Film fra Sør",
         description: "In collaboration with Festivalkontoret, a new visual identity was developed for Film fra Sør. Film fra Sør is the capital’s oldest film festival and one of the city’s most important cultural arenas. The visual concept for the festival is inspired by a kaleidoscope and symbolizes the essence of the film festival experience. The festival draws on the mechanics of the kaleidoscope, and three distinct symbols were defined as key graphic elements in the visual identity.",
-        tags: ["Visual identity", "Motion Graphics", "Typography"],
+        tags: ["Visual Identity", "Motion Graphics", "Typography"],
         mainImage: "film_fra_sor/film_fra_sor_main.jpg",
         media: [
             {
