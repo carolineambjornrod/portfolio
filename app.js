@@ -184,7 +184,7 @@ function showProject(elem, project) {
     };
 
     // Fallback if media doesn't load
-    // setTimeout(showDetails, 1000);
+    setTimeout(showDetails, 2000);
 
     function showDetails() {
         loader.remove();
