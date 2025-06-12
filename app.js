@@ -46,16 +46,87 @@ projectPreviewContainer.addEventListener('scroll', () => {
 
 let projectOpen = false;
 
-function showProject(elem, project){
+// function showProject(elem, project){
+//     const projectPreview = elem.closest('.project_preview');
+//     projectPreview.classList.add('active');
+//     const existingDetails = document.querySelector('.project_details');
+//     if (existingDetails) {
+//         existingDetails.remove();
+//     }
+//     document.querySelector('body').classList.add('blackout');
+//     const projectDetailsWrapper = document.createElement("div");
+//     projectDetailsWrapper.classList.add("project_details_wrapper");
+//     projectDetailsWrapper.innerHTML = `
+//         <div class="project_details">
+//             <button class="close_project_details" onclick="closeProjectDetails()">&#10005;</button>
+//             <div class="project_details_intro">
+//                 <div>
+//                     <h2>${project.title}</h2>
+//                     <h3>${project.subtitle}</h3>
+//                 </div>
+//                 <div class="project_details_tags">
+//                     ${project.tags.map(tag => `<p>${tag}</p>`).join('')}
+//                 </div>
+//             </div>
+//             <p class="project_description">${project.description}</p>
+//             <div class="project_media">
+//                 ${project.media.map(media => `
+//                     ${media.src.includes('mp4') ? `
+//                         ${media.hasSound ? `
+//                             <div class="video_container ${media.width}">
+//                                 <video controls playsinline>
+//                                     <source src="${media.src}" type="video/mp4">
+//                                     Your browser does not support the video tag.
+//                                 </video>
+//                             </div>
+//                         ` : `
+//                             <div class="video_container ${media.width}">
+//                                 <video onclick="toggleVideoPause(this)" autoplay muted playsinline loop>
+//                                     <source src="${media.src}" type="video/mp4">
+//                                     Your browser does not support the video tag.
+//                                 </video>
+//                                 <div class="video_hint">Click to toggle video</div>
+//                             </div>
+//                         `}
+//                     ` : `
+//                         <img src="${media.src}" alt="${media.alt}" class="project_details_image ${media.width}" loading="lazy">
+//                     `}
+//                 `).join('')}
+//             </div>
+//             <div class="project_btns">
+//                 <button class="back_to_overview" onclick="closeProjectDetails()">Back to projects</button>
+//                 <button class="next_project" onclick="nextProject('${project.title}')">Next project</button>
+//             </div>
+//         </div>
+//     `;
+//     document.querySelector('#wrapper').appendChild(projectDetailsWrapper);
+//     setTimeout(() => {
+//         projectOpen = true;
+//     }, 300);
+// }
+
+function showProject(elem, project) {
     const projectPreview = elem.closest('.project_preview');
     projectPreview.classList.add('active');
+
     const existingDetails = document.querySelector('.project_details');
     if (existingDetails) {
         existingDetails.remove();
     }
+
     document.querySelector('body').classList.add('blackout');
+
+    // Add loader
+    const loader = document.createElement("div");
+    loader.classList.add("project_loader");
+    loader.innerHTML = `<div class="spinner"></div>`;
+    document.querySelector('#wrapper').appendChild(loader);
+
+    // Create project details HTML
     const projectDetailsWrapper = document.createElement("div");
     projectDetailsWrapper.classList.add("project_details_wrapper");
+    projectDetailsWrapper.style.display = 'none'; // hide until ready
+
     projectDetailsWrapper.innerHTML = `
         <div class="project_details">
             <button class="close_project_details" onclick="closeProjectDetails()">&#10005;</button>
@@ -74,14 +145,14 @@ function showProject(elem, project){
                     ${media.src.includes('mp4') ? `
                         ${media.hasSound ? `
                             <div class="video_container ${media.width}">
-                                <video controls playsinline>
+                                <video controls playsinline onloadeddata="checkMediaLoaded()">
                                     <source src="${media.src}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
                         ` : `
                             <div class="video_container ${media.width}">
-                                <video onclick="toggleVideoPause(this)" autoplay muted playsinline loop>
+                                <video onclick="toggleVideoPause(this)" autoplay muted playsinline loop onloadeddata="checkMediaLoaded()">
                                     <source src="${media.src}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
@@ -89,7 +160,7 @@ function showProject(elem, project){
                             </div>
                         `}
                     ` : `
-                        <img src="${media.src}" alt="${media.alt}" class="project_details_image ${media.width}" loading="lazy">
+                        <img src="${media.src}" alt="${media.alt}" class="project_details_image ${media.width}" onload="checkMediaLoaded()">
                     `}
                 `).join('')}
             </div>
@@ -99,11 +170,35 @@ function showProject(elem, project){
             </div>
         </div>
     `;
+
     document.querySelector('#wrapper').appendChild(projectDetailsWrapper);
-    setTimeout(() => {
-        projectOpen = true;
-    }, 300);
+
+    // Counter to track media loading
+    let mediaCount = project.media.length;
+    window.checkMediaLoaded = function () {
+        console.log('Media loaded, remaining:', mediaCount);
+        mediaCount--;
+        if (mediaCount <= 0) {
+            showDetails();
+        }
+    };
+
+    // Fallback if media doesn't load
+    // setTimeout(showDetails, 1000);
+
+    function showDetails() {
+        loader.remove();
+        projectDetailsWrapper.style.display = 'block';
+        setTimeout(() => {
+            projectOpen = true;
+        }, 300);
+    }
 }
+
+
+
+
+
 function toggleVideoPause(video) {
     if (video.paused) {
         video.play();
