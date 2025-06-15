@@ -9,7 +9,7 @@ function loadProjectPreviews(){
                 <p>${project.subtitle}</p>
             </div>
             <div class="img_container">
-                <img src="${project.mainImage}" alt="${project.title} main image" class="main_image">
+                <img src="${project.cover}" alt="${project.title} main image" class="main_image">
             </div>
         `;
         document.querySelector('#project_preview_container').appendChild(projectPreview);

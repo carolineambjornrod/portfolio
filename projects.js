@@ -7,6 +7,7 @@ const projects = [
         description: "Visual profile for Beri Farhadi’s first EP release “No Friends But The Mountains” displayed on Spotify. It is a daring portrayal of escape and the emotions associated with it.",
         tags: ["Visual Identity", "Branding", "Photography"],
         mainImage: "beri/beri01.jpg",
+        cover: "covers/beri.jpg",
         media: [
             {
                 src: "beri/beri01.jpg",
@@ -73,6 +74,7 @@ const projects = [
         description: "The identity for Middlesbrough Central Library is bold, contemporary and playful. It reflects the vibrancy of the town. Inspired by the diversity of the people, culture and history. Connecting the old and the new, the classic and the modern.",
         tags: ["Visual Identity", "Branding"],
         mainImage: "bolckow/bolckow01.jpg",
+        cover: "covers/bolckow.jpg",
         media: [
             {
                 src: "bolckow/bolckow01.jpg",
@@ -113,6 +115,7 @@ const projects = [
         description: "Promotion posters for Den Gamle Skobutikken and their club concept  “Take Over”. DGS is a well known bar located in Oslo, Norway.",
         tags: ["Promotion", "Illustration", "Typografi"],
         mainImage: "gamle_skobutikken/gamle_skobutikken04.jpg",
+        cover: "covers/gamle_skobutikken.jpg",
         media: [
             {
                 src: "gamle_skobutikken/gamle_skobutikken01.jpg",
@@ -144,6 +147,7 @@ const projects = [
         description: "Illustrated poster design for personal use.",
         tags: ["Illustration"],
         mainImage: "poster/poster01.jpg",
+        cover: "covers/poster.jpg",
         media: [
             {
                 src: "poster/poster01.jpg",
@@ -175,6 +179,7 @@ const projects = [
         description: "Relaunch of the magazine “Shape Up”. A magazine which focuses on motivating the reader to be active and make healthy choices. The concept was to create a greater diversity amongst women. Combining a playful layout, strong colours, typography, images and illustrations.",
         tags: ["Editorial Design", "Illustration", "Typografi"],
         mainImage: "shape-up/shape-up01.jpg",
+        cover: "covers/shape-up.jpg",
         media: [
             {
                 src: "shape-up/shape-up01.jpg",
@@ -201,6 +206,7 @@ const projects = [
         description: "Visual identity for Camilla Tehrani’s podcast “Venninnepodden”. The profile is bold and confident. It features a logo that ties the concept together and creates a balance. The logo matches her feminine but also tough personality and character.",
         tags: ["Visual Identity", "Photography"],
         mainImage: "venninnepodden/venninnepodden04.jpg",
+        cover: "covers/venninnepodden.jpg",
         media: [
             {
                 src: "venninnepodden/venninnepodden01.jpg",
@@ -236,6 +242,7 @@ const projects = [
         description: "In collaboration with Festivalkontoret, a new visual identity was developed for Film fra Sør. Film fra Sør is the capital’s oldest film festival and one of the city’s most important cultural arenas. The visual concept for the festival is inspired by a kaleidoscope and symbolizes the essence of the film festival experience. The festival draws on the mechanics of the kaleidoscope, and three distinct symbols were defined as key graphic elements in the visual identity.",
         tags: ["Visual Identity", "Motion Graphics", "Typography"],
         mainImage: "film_fra_sor/film_fra_sor_main.jpg",
+        cover: "covers/film_fra_sor.jpg",
         media: [
             {
                 src: "film_fra_sor/film_fra_sor01.mp4",
