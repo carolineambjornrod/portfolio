@@ -283,4 +283,55 @@ const projects = [
             },
         ]
     },
+    // Universal design
+    {
+        title: "Bufdir",
+        subtitle: "UD2024",
+        description: "The Norwegian Directorate for Children, Youth and Family Affairs (Bufdir) was commissioned by the Ministry of Culture and Equality to plan and host an international conference on universal design. A distinctive visual identity was developed to support the promotion of the event and to be used across various conference materials. The concept draws inspiration from systems, building blocks, mechanics, and patterns — with clean, precise lines and intersecting surfaces that reflect clarity and structure. The result is an identity that feels both colorful and inspiring, while remaining orderly and coherent. Alongside the expressive main logo, a more formal version was designed for use in smaller formats.",
+        tags: ["Visual Identity"],
+        mainImage: "uud2024/UD2024_01.gif",
+        cover: "covers/ud2024.jpg",
+        media: [
+            {
+                src: "ud2024/UD2024_01.gif",
+                alt: "Universal Design",
+                width: 'full',
+            },
+            {
+                src: "ud2024/UD2024_02.jpg",
+                alt: "Universal Design",
+                width: 'full',
+            },
+            {
+                src: "ud2024/UD2024_03.jpg",
+                alt: "Universal Design",
+                width: 'full',
+            },
+            {
+                src: "ud2024/UD2024_04.gif",
+                alt: "Universal Design",
+                width: 'full',
+            },
+            {
+                src: "ud2024/UD2024_05.jpg",
+                alt: "Universal Design",
+                width: 'full',
+            },
+            {
+                src: "ud2024/UD2024_06.jpg",
+                alt: "Universal Design",
+                width: 'full',
+            },
+            {
+                src: "ud2024/UD2024_07.jpg",
+                alt: "Universal Design",
+                width: 'full',
+            },
+            {
+                src: "ud2024/UD2024_08.jpg",
+                alt: "Universal Design",
+                width: 'full',
+            }
+        ]
+    }
 ];
