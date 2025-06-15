@@ -262,6 +262,7 @@ const projects = [
                 hasSound: true,
                 alt: "Film fra Sør",
                 width: 'full',
+                poster: "film_fra_sor/ffs_poster.jpg",
             },
             {
                 src: "film_fra_sor/film_fra_sor06.jpg",

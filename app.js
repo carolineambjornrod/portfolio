@@ -74,7 +74,7 @@ function showProject(elem, project){
                     ${media.src.includes('mp4') ? `
                         ${media.hasSound ? `
                             <div class="video_container ${media.width}">
-                                <video controls playsinline>
+                                <video controls playsinline ${media.poster ? `poster="${media.poster}"` : ''}>
                                     <source src="${media.src}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
