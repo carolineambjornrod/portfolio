@@ -656,10 +656,10 @@ table td:first-child{
         }
     }
     .project_preview .project_info_container h2{
-        font-size: 18px;
+        font-size: 15px;
     }
     .project_preview .project_info_container p{
-        font-size: 15px;
+        font-size: 14px;
         line-height: 18px;
     }
     .project_details_wrapper{
