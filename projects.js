@@ -233,6 +233,11 @@ const projects = [
                 alt: "Venninnepodden",
                 width: 'full',
             },
+            {
+                src: "venninnepodden/venninnepodden06.jpg",
+                alt: "Venninnepodden",
+                width: 'full',
+            }
         ]
     },
     // Film Fra Sør

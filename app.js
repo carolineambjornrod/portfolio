@@ -21,7 +21,12 @@ function loadProjectPreviews(){
     });
 }
 
-loadProjectPreviews();
+// When document is ready, load project previews
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+    loadProjectPreviews();
+    }, 250);
+});
 
 // convert vertical scroll to horizontal scroll
 const projectPreviewContainer = document.querySelector('#project_preview_container');
