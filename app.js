@@ -6,7 +6,7 @@ function loadProjectPreviews(){
         projectPreview.innerHTML = `
             <div class="project_info_container">
                 <h2>${project.title}</h2>
-                <p>${project.subtitle}</p>
+                ${project.subtitle ? `<p>${project.subtitle}</p>` : ''}
             </div>
             <div class="img_container">
                 <img src="${project.cover}" alt="${project.title} main image" class="main_image">
@@ -67,7 +67,7 @@ function showProject(elem, project){
             <div class="project_details_intro">
                 <div>
                     <h2>${project.title}</h2>
-                    <h3>${project.subtitle}</h3>
+                    ${project.subtitle ? `<h3>${project.subtitle}</h3>` : ''}
                 </div>
                 <div class="project_details_tags">
                     ${project.tags.map(tag => `<p>${tag}</p>`).join('')}

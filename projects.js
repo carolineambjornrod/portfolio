@@ -1,243 +1,76 @@
 const projects = [
-    // Beri Farhadi
-    // DONE
+    // Seessnart
     {
-        title: "Beri Farhadi",
-        subtitle: "No Friends but the Mountains",
-        description: "Visual profile for Beri Farhadi’s first EP release “No Friends But The Mountains” displayed on Spotify. It is a daring portrayal of escape and the emotions associated with it.",
-        tags: ["Visual Identity", "Branding", "Photography"],
-        mainImage: "beri/beri01.jpg",
-        cover: "covers/beri.jpg",
+        title: "SEES SNART",
+        // subtitle: "Visual Identity",
+        description: "SEES SNART is a collective of bars, each with its own unique identity yet connected by a common purpose — creating memorable shared experiences. The website was designed to reflect this character through a clean and modern aesthetic, combined with an intuitive user interface that makes exploring the different venues simple and seamless. Visit the website at www.seessnart.no",
+        tags: ["UX", "Visual Design"],
+        mainImage: "seessnart/seessnart.jpg",
+        cover: "covers/seessnart.jpg",
         media: [
             {
-                src: "beri/beri01.jpg",
-                alt: "Beri Farhadi",
+                src: "seessnart/seessnart-video.mp4",
+                hasSound: false,
+                alt: "SEES SNART",
                 width: 'full',
+                poster: "seessnart/seessnart-poster.jpg",
             },
             {
-                src: "beri/beri02.jpg",
-                alt: "Beri Farhadi",
-                width: 'full',
-            },
-            {
-                src: "beri/beri03.jpg",
-                alt: "Beri Farhadi",
-                width: 'full',
-            },
-            {
-                src: "beri/beri04.mp4",
-                alt: "Beri Farhadi",
-                width: 'full',
-            },
-            {
-                src: "beri/beri05.jpg",
-                alt: "Beri Farhadi",
-                width: 'half',
-            },
-            {
-                src: "beri/beri06.jpg",
-                alt: "Beri Farhadi",
-                width: 'half',
-            },
-            {
-                src: "beri/beri07.jpg",
-                alt: "Beri Farhadi",
-                width: 'half',
-            },
-            {
-                src: "beri/beri08.jpg",
-                alt: "Beri Farhadi",
-                width: 'half',
-            },
-            {
-                src: "beri/beri09.jpg",
-                alt: "Beri Farhadi",
-                width: 'half',
-            },
-            {
-                src: "beri/beri10.jpg",
-                alt: "Beri Farhadi",
-                width: 'half',
-            },
-            {
-                src: "beri/beri11.mp4",
-                alt: "Beri Farhadi",
+                src: "seessnart/seessnart01.jpg",
+                alt: "Seessnart",
                 width: 'full',
             },
         ]
     },
-    // Bolckow
-    // DONE
+    // Krontroll
     {
-        title: "Middlesbrough Central Library",
-        subtitle: "Bolckow",
-        description: "The identity for Middlesbrough Central Library is bold, contemporary and playful. It reflects the vibrancy of the town. Inspired by the diversity of the people, culture and history. Connecting the old and the new, the classic and the modern.",
-        tags: ["Visual Identity", "Branding"],
-        mainImage: "bolckow/bolckow01.jpg",
-        cover: "covers/bolckow.jpg",
+        title: "Storebrand",
+        subtitle: "Kontroll",
+        description: "Krontroll was a creative campaign developed for Storebrand to raise awareness about pension planning and drive engagement with the Kron savings app. The idea played on wordplay and surprise to encourage people to take control of their financial future — using humor and unexpected moments to spark interest and action. In this project, I contributed to the design and execution of key visual elements that helped bring the concept to life.",
+        tags: ["Campaign Design", "Concept Development", "Visual Design"],
+        mainImage: "krontroll/krontroll01.jpg",
+        cover: "covers/krontroll.jpg",
         media: [
             {
-                src: "bolckow/bolckow01.jpg",
-                alt: "Bolckow",
+                src: "krontroll/krontroll01.jpg",
+                alt: "Krontroll",
                 width: 'full',
             },
             {
-                src: "bolckow/bolckow02.mp4",
+                src: "krontroll/krontroll02.jpg",
+                alt: "Krontroll",
                 width: 'full',
             },
             {
-                src: "bolckow/bolckow03.jpg",
-                alt: "Bolckow",
+                src: "krontroll/krontroll-video01.mp4",
+                hasSound: false,
+                alt: "Krontroll",
+                width: 'full',
+                poster: "krontroll/krontroll-poster01.jpg",
+            },
+            {
+                src: "krontroll/krontroll03.jpg",
+                alt: "Krontroll",
                 width: 'full',
             },
             {
-                src: "bolckow/bolckow04.jpg",
-                alt: "Bolckow",
+                src: "krontroll/krontroll-video02.mp4",
+                hasSound: false,
+                alt: "Krontroll",
                 width: 'full',
+                poster: "krontroll/krontroll-poster02.jpg",
             },
-            {
-                src: "bolckow/bolckow05.jpg",
-                alt: "Bolckow",
-                width: 'full',
-            },
-            {
-                src: "bolckow/bolckow06.jpg",
-                alt: "Bolckow",
-                width: 'full',
-            },
-        ]
-    },
-    // Gamle skobutikken
-    // DONE
-    {
-        title: "Den Gamle Skobutikken",
-        subtitle: "Take Over",
-        description: "Promotion posters for Den Gamle Skobutikken and their club concept  “Take Over”. DGS is a well known bar located in Oslo, Norway.",
-        tags: ["Promotion", "Illustration", "Typografi"],
-        mainImage: "gamle_skobutikken/gamle_skobutikken04.jpg",
-        cover: "covers/gamle_skobutikken.jpg",
-        media: [
-            {
-                src: "gamle_skobutikken/gamle_skobutikken01.jpg",
-                alt: "Gamle skobutikken",
-                width: 'full',
-            },
-            {
-                src: "gamle_skobutikken/gamle_skobutikken02.jpg",
-                alt: "Gamle skobutikken",
-                width: 'full',
-            },
-            {
-                src: "gamle_skobutikken/gamle_skobutikken03.jpg",
-                alt: "Gamle skobutikken",
-                width: 'full',
-            },
-            {
-                src: "gamle_skobutikken/gamle_skobutikken04.jpg",
-                alt: "Gamle skobutikken",
-                width: 'full',
-            },
-        ]
-    },
-    // Poster
-    // DONE
-    {
-        title: "Poster",
-        subtitle: "Illustration design",
-        description: "Illustrated poster design for personal use.",
-        tags: ["Illustration"],
-        mainImage: "poster/poster01.jpg",
-        cover: "covers/poster.jpg",
-        media: [
-            {
-                src: "poster/poster01.jpg",
-                alt: "Poster",
-                width: 'full',
-            },
-            {
-                src: "poster/poster02.jpg",
-                alt: "Poster",
-                width: 'full',
-            },
-            {
-                src: "poster/poster03.jpg",
-                alt: "Poster",
-                width: 'full',
-            },
-            {
-                src: "poster/poster04.jpg",
-                alt: "Poster",
-                width: 'full',
-            },
-        ]
-    },
-    // Shape Up
-    // DONE
-    {
-        title: "Story House Egmont",
-        subtitle: "Shape Up",
-        description: "Relaunch of the magazine “Shape Up”. A magazine which focuses on motivating the reader to be active and make healthy choices. The concept was to create a greater diversity amongst women. Combining a playful layout, strong colours, typography, images and illustrations.",
-        tags: ["Editorial Design", "Illustration", "Typografi"],
-        mainImage: "shape-up/shape-up01.jpg",
-        cover: "covers/shape-up.jpg",
-        media: [
-            {
-                src: "shape-up/shape-up01.jpg",
-                alt: "Shape Up",
-                width: 'full',
-            },
-            {
-                src: "shape-up/shape-up02.mp4",
-                alt: "Shape Up",
-                width: 'full',
-            },
-            {
-                src: "shape-up/shape-up03.jpg",
-                alt: "Shape Up",
-                width: 'full',
-            }
-        ]
-    },
-    // Venninepodden
-    // DONE
-    {
-        title: "Camilla Tehrani",
-        subtitle: "Venninnepodden",
-        description: "Visual identity for Camilla Tehrani’s podcast “Venninnepodden”. The profile is bold and confident. It features a logo that ties the concept together and creates a balance. The logo matches her feminine but also tough personality and character.",
-        tags: ["Visual Identity", "Photography"],
-        mainImage: "venninnepodden/venninnepodden04.jpg",
-        cover: "covers/venninnepodden.jpg",
-        media: [
-            {
-                src: "venninnepodden/venninnepodden01.jpg",
-                alt: "Venninnepodden",
-                width: 'full',
-            },
-            {
-                src: "venninnepodden/venninnepodden02.jpg",
-                alt: "Venninnepodden",
-                width: 'full',
-            },
-            {
-                src: "venninnepodden/venninnepodden03.jpg",
-                alt: "Venninnepodden",
-                width: 'full',
-            },
-            {
-                src: "venninnepodden/venninnepodden04.jpg",
-                alt: "Venninnepodden",
-                width: 'full',
-            },
-            {
-                src: "venninnepodden/venninnepodden05.jpg",
-                alt: "Venninnepodden",
-                width: 'full',
-            },
-            {
-                src: "venninnepodden/venninnepodden06.jpg",
-                alt: "Venninnepodden",
-                width: 'full',
-            }
+
+            // {
+            //     src: "krontroll/krontroll04.jpg",
+            //     alt: "Krontroll",
+            //     width: 'full',
+            // },
+            // {
+            //     src: "krontroll/krontroll05.jpg",
+            //     alt: "Krontroll",
+            //     width: 'full',
+            // },
         ]
     },
     // Film Fra Sør
@@ -338,5 +171,246 @@ const projects = [
                 width: 'full',
             }
         ]
-    }
+    },
+   // Venninepodden
+    // DONE
+    {
+        title: "Camilla Tehrani",
+        subtitle: "Venninnepodden",
+        description: "Visual identity for Camilla Tehrani’s podcast “Venninnepodden”. The profile is bold and confident. It features a logo that ties the concept together and creates a balance. The logo matches her feminine but also tough personality and character.",
+        tags: ["Visual Identity", "Photography"],
+        mainImage: "venninnepodden/venninnepodden04.jpg",
+        cover: "covers/venninnepodden.jpg",
+        media: [
+            // {
+            //     src: "venninnepodden/venninnepodden01.jpg",
+            //     alt: "Venninnepodden",
+            //     width: 'full',
+            // },
+            {
+                src: "venninnepodden/venninnepodden02.jpg",
+                alt: "Venninnepodden",
+                width: 'full',
+            },
+            {
+                src: "venninnepodden/venninnepodden03.jpg",
+                alt: "Venninnepodden",
+                width: 'full',
+            },
+            {
+                src: "venninnepodden/venninnepodden04.jpg",
+                alt: "Venninnepodden",
+                width: 'full',
+            },
+            {
+                src: "venninnepodden/venninnepodden05.jpg",
+                alt: "Venninnepodden",
+                width: 'full',
+            },
+            {
+                src: "venninnepodden/venninnepodden06.jpg",
+                alt: "Venninnepodden",
+                width: 'full',
+            }
+        ]
+    },
+    // Shape Up
+    // DONE
+    {
+        title: "Story House Egmont",
+        subtitle: "Shape Up",
+        description: "Relaunch of the magazine “Shape Up”. A magazine which focuses on motivating the reader to be active and make healthy choices. The concept was to create a greater diversity amongst women. Combining a playful layout, strong colours, typography, images and illustrations.",
+        tags: ["Editorial Design", "Illustration", "Typografi"],
+        mainImage: "shape-up/shape-up01.jpg",
+        cover: "covers/shape-up.jpg",
+        media: [
+            {
+                src: "shape-up/shape-up01.jpg",
+                alt: "Shape Up",
+                width: 'full',
+            },
+            {
+                src: "shape-up/shape-up02.mp4",
+                alt: "Shape Up",
+                width: 'full',
+            },
+            {
+                src: "shape-up/shape-up03.jpg",
+                alt: "Shape Up",
+                width: 'full',
+            }
+        ]
+    },
+    // Beri Farhadi
+    // DONE
+    {
+        title: "Beri Farhadi",
+        subtitle: "No Friends but the Mountains",
+        description: "Visual profile for Beri Farhadi’s first EP release “No Friends But The Mountains” displayed on Spotify. It is a daring portrayal of escape and the emotions associated with it.",
+        tags: ["Visual Identity", "Branding", "Photography"],
+        mainImage: "beri/beri01.jpg",
+        cover: "covers/beri.jpg",
+        media: [
+            {
+                src: "beri/beri01.jpg",
+                alt: "Beri Farhadi",
+                width: 'full',
+            },
+            {
+                src: "beri/beri02.jpg",
+                alt: "Beri Farhadi",
+                width: 'full',
+            },
+            {
+                src: "beri/beri03.jpg",
+                alt: "Beri Farhadi",
+                width: 'full',
+            },
+            {
+                src: "beri/beri04.mp4",
+                alt: "Beri Farhadi",
+                width: 'full',
+            },
+            // {
+            //     src: "beri/beri05.jpg",
+            //     alt: "Beri Farhadi",
+            //     width: 'half',
+            // },
+            {
+                src: "beri/beri06.jpg",
+                alt: "Beri Farhadi",
+                width: 'half',
+            },
+            // {
+            //     src: "beri/beri07.jpg",
+            //     alt: "Beri Farhadi",
+            //     width: 'half',
+            // },
+            // {
+            //     src: "beri/beri08.jpg",
+            //     alt: "Beri Farhadi",
+            //     width: 'half',
+            // },
+            // {
+            //     src: "beri/beri09.jpg",
+            //     alt: "Beri Farhadi",
+            //     width: 'half',
+            // },
+            {
+                src: "beri/beri10.jpg",
+                alt: "Beri Farhadi",
+                width: 'half',
+            },
+            {
+                src: "beri/beri11.mp4",
+                alt: "Beri Farhadi",
+                width: 'full',
+            },
+        ]
+    },
+    // Bolckow
+    // DONE
+    {
+        title: "Middlesbrough Central Library",
+        subtitle: "Bolckow",
+        description: "The identity for Middlesbrough Central Library is bold, contemporary and playful. It reflects the vibrancy of the town. Inspired by the diversity of the people, culture and history. Connecting the old and the new, the classic and the modern.",
+        tags: ["Visual Identity", "Branding"],
+        mainImage: "bolckow/bolckow01.jpg",
+        cover: "covers/bolckow.jpg",
+        media: [
+            {
+                src: "bolckow/bolckow01.jpg",
+                alt: "Bolckow",
+                width: 'full',
+            },
+            {
+                src: "bolckow/bolckow02.mp4",
+                width: 'full',
+            },
+            // {
+            //     src: "bolckow/bolckow03.jpg",
+            //     alt: "Bolckow",
+            //     width: 'full',
+            // },
+            {
+                src: "bolckow/bolckow04.jpg",
+                alt: "Bolckow",
+                width: 'full',
+            },
+            {
+                src: "bolckow/bolckow05.jpg",
+                alt: "Bolckow",
+                width: 'full',
+            },
+            // {
+            //     src: "bolckow/bolckow06.jpg",
+            //     alt: "Bolckow",
+            //     width: 'full',
+            // },
+        ]
+    },
+    // Gamle skobutikken
+    // DONE
+    {
+        title: "Den Gamle Skobutikken",
+        subtitle: "Take Over",
+        description: "Promotion posters for Den Gamle Skobutikken and their club concept  “Take Over”. DGS is a well known bar located in Oslo, Norway.",
+        tags: ["Promotion", "Illustration", "Typografi"],
+        mainImage: "gamle_skobutikken/gamle_skobutikken04.jpg",
+        cover: "covers/gamle_skobutikken.jpg",
+        media: [
+            {
+                src: "gamle_skobutikken/gamle_skobutikken01.jpg",
+                alt: "Gamle skobutikken",
+                width: 'full',
+            },
+            {
+                src: "gamle_skobutikken/gamle_skobutikken02.jpg",
+                alt: "Gamle skobutikken",
+                width: 'full',
+            },
+            {
+                src: "gamle_skobutikken/gamle_skobutikken03.jpg",
+                alt: "Gamle skobutikken",
+                width: 'full',
+            },
+            {
+                src: "gamle_skobutikken/gamle_skobutikken04.jpg",
+                alt: "Gamle skobutikken",
+                width: 'full',
+            },
+        ]
+    },
+    // Poster
+    // DONE
+    {
+        title: "Poster",
+        subtitle: "Illustration design",
+        description: "Illustrated poster design for personal use.",
+        tags: ["Illustration"],
+        mainImage: "poster/poster01.jpg",
+        cover: "covers/poster.jpg",
+        media: [
+            {
+                src: "poster/poster01.jpg",
+                alt: "Poster",
+                width: 'full',
+            },
+            {
+                src: "poster/poster02.jpg",
+                alt: "Poster",
+                width: 'full',
+            },
+            {
+                src: "poster/poster03.jpg",
+                alt: "Poster",
+                width: 'full',
+            },
+            {
+                src: "poster/poster04.jpg",
+                alt: "Poster",
+                width: 'full',
+            },
+        ]
+    },
 ];
