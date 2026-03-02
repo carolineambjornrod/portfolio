@@ -25,7 +25,7 @@ const projects = [
     // Krontroll
     {
         title: "Storebrand",
-        subtitle: "Kontroll",
+        subtitle: "Krontroll",
         description: "Krontroll was a creative campaign developed for Storebrand to raise awareness about pension planning and drive engagement with the Kron savings app. The idea played on wordplay and surprise to encourage people to take control of their financial future — using humor and unexpected moments to spark interest and action. In this project, I contributed to the design and execution of key visual elements that helped bring the concept to life.",
         tags: ["Campaign Design", "Concept Development", "Visual Design"],
         mainImage: "krontroll/krontroll01.jpg",
