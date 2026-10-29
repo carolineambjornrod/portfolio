@@ -460,6 +460,7 @@ table th, table td{
 }
 table td:first-child{
     padding-right: 12px;
+    width: 150px;
 }
 
 @keyframes animateDetails{
